@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'risks'
 ]
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'bcinsurer.urls'
@@ -94,7 +97,7 @@ DATABASES = {
         'NAME': 'bcinsurer',
         'HOST': 'localhost',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'root',
     }
 }
 
@@ -140,3 +143,15 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static1')
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_WHITELIST = (
+    'google.com',
+    'hostname.example.com',
+    'localhost:8000',
+    '127.0.0.1:9005',
+    'localhost:9005'
+)

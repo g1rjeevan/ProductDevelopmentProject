@@ -10,8 +10,10 @@
   "author": "G1(jeevanrpro@gmail.com)",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "bootstrap": "^3.3.5",
     "browserify": "^11.0.1",
+    "cors": "^2.8.4",
     "flux": "^2.0.3",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
